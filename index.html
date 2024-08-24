@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalShrink: Browser-Based Image Compression</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+</head>
+<body>
+    <h1>LocalShrink</h1>
+    <p class="tagline">Secure, browser-based image compression - No uploads needed</p>
+    <div class="controls">
+        <div class="control-group">
+            <label for="imageInput">Select Images:</label>
+            <input type="file" id="imageInput" accept="image/*" multiple>
+        </div>
+        <div class="control-group">
+            <label for="resizePercentage">Resize Percentage:</label>
+            <input type="number" id="resizePercentage" min="1" max="100" value="50">
+        </div>
+        <div class="control-group">
+            <label for="jpegQuality">JPEG Quality:</label>
+            <input type="number" id="jpegQuality" min="1" max="100" value="70">
+        </div>
+        <button onclick="compressImages()">Compress Images</button>
+    </div>
+    <div id="imagesContainer"></div>
+
+    <footer>
+        <a href="https://github.com/abinthomasonline" target="_blank">github.com/abinthomasonline</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
